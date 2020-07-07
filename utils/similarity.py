@@ -24,4 +24,4 @@ def compute_similarity(model, data):
         preds = tf.concat([preds, tf.expand_dims(model.predict(x1, x2), 0)], 0)
 
     #
-    np.savetxt('data/semeion_distances.txt', 1 - preds.numpy())
+    np.savetxt('data/semeion_distances.txt', preds.numpy())

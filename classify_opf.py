@@ -11,16 +11,16 @@ txt = l.load_txt('data/semeion.txt')
 X, Y = p.parse_loader(txt)
 
 # Splitting data into training and testing sets
-X_train, X_test, Y_train, Y_test = s.split(X, Y, percentage=0.8, random_state=1)
+X_train, X_test, Y_train, Y_test, I_train, I_test = s.split_with_index(X, Y, percentage=0.8, random_state=1)
 
 # Creates a SupervisedOPF instance
 opf = SupervisedOPF(distance='log_squared_euclidean', pre_computed_distance='data/semeion_distances.txt')
 
 # Fits training data into the classifier
-opf.fit(X_train, Y_train)
+opf.fit(X_train, Y_train, I_train)
 
 # Predicts new data
-preds = opf.predict(X_test)
+preds = opf.predict(X_test, I_test)
 
 # Calculating accuracy
 acc = g.opf_accuracy(Y_test, preds)
