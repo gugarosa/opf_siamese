@@ -1,0 +1,2 @@
+git+https://github.com/gugarosa/dualing
+git+https://github.com/gugarosa/opfython
