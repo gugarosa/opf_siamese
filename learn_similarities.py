@@ -27,7 +27,7 @@ def get_arguments():
 
     parser.add_argument('-lr', help='Learning rate', type=float, default=0.001)
 
-    parser.add_argument('-epochs', help='Epochs', type=float, default=100)
+    parser.add_argument('-epochs', help='Epochs', type=int, default=100)
 
     return parser.parse_args()
 
