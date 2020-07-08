@@ -26,6 +26,7 @@ def get_arguments():
 
     return parser.parse_args()
 
+
 if __name__ == '__main__':
     # Gathers the input arguments
     args = get_arguments()
@@ -38,7 +39,8 @@ if __name__ == '__main__':
     use_simimilarity = args.use_similarity
 
     # Loads the training and testing sets along their indexes
-    X_train, X_test, Y_train, Y_test, I_train, I_test = l.load_dataset(input_file, train_split=split, random_state=seed)
+    X_train, Y_train, I_train, X_test, Y_test, I_test = l.load_split_dataset(
+        input_file, train_split=split, random_state=seed)
 
     # If similarity should be used
     if use_simimilarity:
