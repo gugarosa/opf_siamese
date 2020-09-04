@@ -1,7 +1,10 @@
 import argparse
+import pickle
 
+import numpy as np
 import opfython.math.general as g
 from opfython.models import SupervisedOPF
+from sklearn.metrics import classification_report
 
 import utils.loader as l
 
@@ -16,7 +19,7 @@ def get_arguments():
 
     parser = argparse.ArgumentParser(usage='Classifies data using Optimum-Path Forest.')
 
-    parser.add_argument('dataset', help='Dataset identifier', choices=['boat'])
+    parser.add_argument('dataset', help='Dataset identifier', choices=['caltech', 'mpeg7', 'semeion'])
 
     parser.add_argument('-tr_split', help='Training set percentage', type=float, default=0.5)
 
@@ -32,18 +35,19 @@ if __name__ == '__main__':
     args = get_arguments()
 
     # Gathering common variables
-    input_file = f'data/{args.dataset}.txt'
-    input_sim = f'data/{args.dataset}_sim.txt'
+    dataset = args.dataset
+    input_file = f'data/{dataset}.txt'
+    input_sim = f'data/{dataset}_sim.txt'
     split = args.tr_split
     seed = args.seed
-    use_simimilarity = args.use_similarity
+    use_similarity = args.use_similarity
 
     # Loads the training and testing sets along their indexes
     X_train, Y_train, I_train, X_test, Y_test, I_test = l.load_split_dataset(
         input_file, train_split=split, random_state=seed)
 
     # If similarity should be used
-    if use_simimilarity:
+    if use_similarity:
         # Creates a SupervisedOPF with pre-computed distances
         opf = SupervisedOPF(pre_computed_distance=input_sim)
 
@@ -58,7 +62,16 @@ if __name__ == '__main__':
     # Predicts new data
     preds = opf.predict(X_test, I_test)
 
-    # Calculating accuracy
-    acc = g.opf_accuracy(Y_test, preds)
+    # Calculates the confusion matrix
+    c_matrix = g.confusion_matrix(Y_test, preds)
 
-    print(f'Accuracy: {acc}')
+    # Calculates the classification report
+    report = classification_report(Y_test, preds, output_dict=True)
+
+    # Saves confusion matrix in a .npy file
+    np.save(f'outputs/{dataset}_{use_similarity}_{seed}_matrix', c_matrix)
+
+    # Opens file to further save
+    with open(f'outputs/{dataset}_{use_similarity}_{seed}_report.pkl', 'wb') as f:
+        # Saves report to a .pkl file
+        pickle.dump(report, f)

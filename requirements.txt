@@ -1,2 +1,3 @@
 git+https://github.com/gugarosa/dualing
 git+https://github.com/gugarosa/opfython
+scikit-learn>=0.22.2
