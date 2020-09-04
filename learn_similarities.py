@@ -73,10 +73,10 @@ if __name__ == '__main__':
     model.fit(dataset.batches, epochs=epochs)
 
     # Loads all data
-    # X, Y = l.load_dataset(input_file)
+    X, Y = l.load_dataset(input_file)
 
     # Changing the dataset's input shape for further pre-processing
-    # dataset.input_shape = (X.shape[0], 32, 32, 1)
+    dataset.input_shape = (X.shape[0], 32, 32, 1)
 
     # Computes the similarity between all samples and saves in a file
-    # s.compute_similarity(model, dataset.preprocess(X), output_file)
+    s.compute_similarity(model, dataset.preprocess(X), output_file)
