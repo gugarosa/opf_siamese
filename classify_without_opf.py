@@ -21,7 +21,7 @@ def get_arguments():
 
     parser = argparse.ArgumentParser(usage='Classifies data using Scikit-Learn classifiers.')
 
-    parser.add_argument('dataset', help='Dataset identifier', choices=['caltech', 'mpeg7', 'semeion'])
+    parser.add_argument('dataset', help='Dataset identifier', choices=['bbc', 'caltech', 'mpeg7', 'semeion'])
 
     parser.add_argument('-tr_split', help='Training set percentage', type=float, default=0.5)
 
