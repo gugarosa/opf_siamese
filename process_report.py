@@ -14,7 +14,7 @@ def get_arguments():
 
     parser = argparse.ArgumentParser(usage='Processes the report into a text file.')
 
-    parser.add_argument('dataset', help='Dataset identifier', choices=['caltech', 'mpeg7', 'semeion'])
+    parser.add_argument('dataset', help='Dataset identifier', choices=['bbc', 'caltech', 'mpeg7', 'semeion'])
 
     parser.add_argument('-seed', help='Deterministic seed', type=int, default=0)
 

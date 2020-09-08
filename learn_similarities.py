@@ -19,7 +19,7 @@ def get_arguments():
 
     parser = argparse.ArgumentParser(usage='Learns similarities through Siamese Networks.')
 
-    parser.add_argument('dataset', help='Dataset identifier', choices=['caltech', 'mpeg7', 'semeion'])
+    parser.add_argument('dataset', help='Dataset identifier', choices=['bbc', 'caltech', 'mpeg7', 'semeion'])
 
     parser.add_argument('n_pairs', help='Number of data pairs', type=int)
 
