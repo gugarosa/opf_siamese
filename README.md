@@ -29,7 +29,9 @@ If you use our work to fulfill any of your needs, please cite us:
 
 Install all the pre-needed requirements using:
 
-```pip install -r requirements.txt```
+```Python
+pip install -r requirements.txt
+```
 
 ### Data configuration
 
@@ -56,6 +58,8 @@ After learning the similarity, one needs to classify the data using an OPF-based
 ```Python
 python classify_with_opf.py -h
 ```
+
+or
 
 ```Python
 python classify_without_opf.py -h
