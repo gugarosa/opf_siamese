@@ -1,6 +1,6 @@
-# Weighing Optimum-Path Forest Through Similarity Measures
+# Learning to Weight Similarity Measures with Siamese Networks: A Case Study on Optimum-Path Forest
 
-*This repository holds all the necessary code to run the very-same experiments described in the paper "Weighing Optimum-Path Forest Through Similarity Measures".*
+*This repository holds all the necessary code to run the very-same experiments described in the paper "Learning to Weight Similarity Measures with Siamese Networks: A Case Study on Optimum-Path Forest".*
 
 ---
 
