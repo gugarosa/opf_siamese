@@ -1,6 +1,6 @@
 # Learning to Weight Similarity Measures with Siamese Networks: A Case Study on Optimum-Path Forest
 
-*This repository holds all the necessary code to run the very-same experiments described in the paper "Learning to Weight Similarity Measures with Siamese Networks: A Case Study on Optimum-Path Forest".*
+*This repository holds all the necessary code to run the very-same experiments described in the chapter "Learning to Weight Similarity Measures with Siamese Networks: A Case Study on Optimum-Path Forest".*
 
 ---
 
@@ -83,7 +83,7 @@ Instead of invoking every script to conduct the experiments, it is also possible
 ./pipeline.sh
 ```
 
-Such a script will conduct every step needed to accomplish the experimentation used throughout this paper. Furthermore, one can change any input argument that is defined in the script.
+Such a script will conduct every step needed to accomplish the experimentation used throughout this chapter. Furthermore, one can change any input argument that is defined in the script.
 
 ---
 
