@@ -35,7 +35,7 @@ pip install -r requirements.txt
 
 ### Data configuration
 
-Please extract the `tar.gz` file inside the `data/` folder.
+Please [download](http://recogna.tech/files/opf_siamese/data.tar.gz) the datasets in the OPF file format and put then on the `data/` folder.
 
 ---
 
