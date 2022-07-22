@@ -8,7 +8,19 @@
 
 If you use our work to fulfill any of your needs, please cite us:
 
-```
+```BibTex
+@incollection{deRosa:22,
+  title = {Chapter 7 - Learning to weight similarity measures with Siamese networks: a case study on optimum-path forest☆☆The authors appreciate São Paulo Research Foundation (FAPESP) grants #2013/07375-0, #2014/12236-1, #2017/25908-6, #2018/15597-6, #2018/21934-5 and #2019/02205-5, and CNPq grants 307066/2017-7 and 427968/2018-6.},
+  editor = {Alexandre Xavier Falcão and João Paulo Papa},
+  booktitle = {Optimum-Path Forest},
+  publisher = {Academic Press},
+  pages = {155-173},
+  year = {2022},
+  isbn = {978-0-12-822688-9},
+  doi = {https://doi.org/10.1016/B978-0-12-822688-9.00015-3},
+  url = {https://www.sciencedirect.com/science/article/pii/B9780128226889000153},
+  author = {Gustavo H. {de Rosa} and João Paulo Papa}
+}
 ```
 
 ---
